@@ -31,7 +31,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ggW-gw-fuU" kind="show" id="J72-WG-oYi"/>
+                                            <segue destination="ggW-gw-fuU" kind="show" identifier="EditItem" id="J72-WG-oYi"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -88,10 +88,18 @@
                                 <action selector="cancelPressed:" destination="ggW-gw-fuU" id="zhC-Up-dfK"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="gla-zq-B1D"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="gla-zq-B1D">
+                            <connections>
+                                <segue destination="sFT-M2-XlC" kind="unwind" identifier="UnwindFromSave" unwindAction="unwindFromDetailViewControllerWithSegue:" id="ei1-hM-FtW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="toDoField" destination="Zdb-Fz-nZp" id="LMe-nv-MYP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hic-2q-hen" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sFT-M2-XlC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2908" y="130.88455772113943"/>
         </scene>
@@ -133,6 +141,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="J72-WG-oYi"/>
+        <segue reference="chh-lC-dIX"/>
     </inferredMetricsTieBreakers>
 </document>
